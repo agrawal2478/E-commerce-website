@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyShop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>MyShop</h2>
+    <a href="/cart">🛒 Cart</a>
+</div>
+
+<h1 class="title">Explore Electronics</h1>
+
+<div class="products">
+    {% for p in products %}
+    <div class="card">
+        <img src="{{ p[3] }}" alt="product">
+
+        <h3>{{ p[1] }}</h3>
+        <p class="price">₹{{ p[2] }}</p>
+
+        <a class="btn" href="/add_to_cart/{{ p[0] }}">
+            Add to Cart
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
